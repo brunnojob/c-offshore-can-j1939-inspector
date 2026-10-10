@@ -1,0 +1,24 @@
+$ bash -e -o pipefail -c make test && ./app < examples/input.txt
+cc -std=c17 -Wall -Wextra -Werror -pedantic -O2 src/main.c -lm -o app
+./app --self-test
+PGN and wrap tests passed
+time=0.000 source=1 pgn=61444 priority=6 gap=0
+time=1.000 source=1 pgn=61444 priority=6 gap=0
+time=2.000 source=1 pgn=61444 priority=6 gap=1
+
+$ ./app
+time=0.000 source=1 pgn=61444 priority=6 gap=0
+time=1.000 source=1 pgn=61444 priority=6 gap=0
+time=2.000 source=1 pgn=61444 priority=6 gap=1
+
+$ ./app
+missing input
+
+$ ./app
+expected time,id,sequence,payload
+
+$ ./app --unsupported
+unsupported command arguments
+
+$ ./app
+input record too large
