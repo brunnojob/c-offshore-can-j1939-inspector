@@ -1,9 +1,9 @@
 {
   "schema": 1,
   "repository": "brunnojob/c-offshore-can-j1939-inspector",
-  "source_commit": "8a6b413a05db5e2025de7ccda1ef1fdd840389aa",
-  "generated_at": "2026-10-10T02:34:07.103496+00:00",
-  "run_url": "https://github.com/brunnojob/c-offshore-can-j1939-inspector/actions/runs/38017435414",
+  "source_commit": "707e1b3f8146db0cce112f3d24a0e4ba56fb0b32",
+  "generated_at": "2026-10-10T02:42:45.720997+00:00",
+  "run_url": "https://github.com/brunnojob/c-offshore-can-j1939-inspector/actions/runs/38017951970",
   "inputs_sha256": {
     ".proof/scenarios.json": "8f5ef93e9fb62e0bd2eb08801b23fd79c6020cd716aaad87bdd77091771a33f7",
     "examples/input.txt": "d7850c5427c2856b37117dfe4d84e73bf549b7c5188058fdda98dd7a5d2929f8"
@@ -23,7 +23,7 @@
       "exit": 0,
       "expected_exit": 0,
       "passed": true,
-      "seconds": 0.252,
+      "seconds": 0.401,
       "output": "cc -std=c17 -Wall -Wextra -Werror -pedantic -O2 src/main.c -lm -o app\n./app --self-test\nPGN and wrap tests passed\ntime=0.000 source=1 pgn=61444 priority=6 gap=0\ntime=1.000 source=1 pgn=61444 priority=6 gap=0\ntime=2.000 source=1 pgn=61444 priority=6 gap=1\n",
       "output_sha256": "f1298c4125ff43b1c3682b7b3e51c354fd8c6de5c13aa874ca47beeb8ed20625"
     },
