@@ -18,6 +18,7 @@ static size_t fields(char *line, char **out, size_t capacity) {
     char *p = line;
     while (*p) {
         if (count == capacity) fail("too many fields");
+        if (*p == ',') fail("empty field");
         out[count++] = p;
         char *separator = strchr(p, ',');
         if (!separator) break;
@@ -36,12 +37,14 @@ static unsigned integer(const char *s, unsigned max) {
     double v = number(s); if (v < 0 || v > max || floor(v) != v) fail("invalid integer"); return (unsigned)v;
 }
 int main(int argc, char **argv) {
+    if (argc > 1 && !(argc == 2 && !strcmp(argv[1], "--self-test"))) fail("unsupported command arguments");
     if (argc == 2 && !strcmp(argv[1], "--self-test")) {
         assert(pgn(0x18f00401) == 0xf004); assert(pgn(0x18ea2301) == 0xea00);
         assert(((255u + 1u) & 255u) == 0); puts("PGN and wrap tests passed"); return 0;
     }
     Stream streams[256] = {0}; char line[512]; double last = -1; size_t rows = 0;
     while (fgets(line, sizeof line, stdin)) {
+        if (strlen(line) == sizeof line - 1 && line[sizeof line - 2] != '\n') fail("input record too large");
         char *f[4]; if (fields(line, f, 4) != 4) fail("expected time,id,sequence,payload");
         double time = number(f[0]); if (time < 0 || time < last) fail("non-monotonic time"); last = time;
         char *end; errno = 0; unsigned long id = strtoul(f[1], &end, 16);
