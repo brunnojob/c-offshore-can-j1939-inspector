@@ -1,5 +1,7 @@
 # c-offshore-can-j1939-inspector
 
+[View execution evidence](https://brunnojob.github.io/devstart-lab/proofs/c-offshore-can-j1939-inspector/) · [Run browser demo](https://brunnojob.github.io/devstart-lab/proofs/c-offshore-can-j1939-inspector/demo/)
+
 Decode 29-bit CAN identifiers and identify sequence gaps in recorded offshore equipment traffic.
 
 ```sh
