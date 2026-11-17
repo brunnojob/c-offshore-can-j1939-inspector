@@ -1,4 +1,4 @@
 date=2026-11-18
-seq=2
-ts=1794953095
-scope=bus-load
+seq=3
+ts=1794953104
+scope=spn-table
