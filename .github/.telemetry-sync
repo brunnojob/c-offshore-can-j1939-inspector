@@ -1,4 +1,4 @@
 date=2026-11-17
-seq=29
-ts=1794910086
-scope=bus-load
+seq=30
+ts=1794910103
+scope=pgn-decoder
