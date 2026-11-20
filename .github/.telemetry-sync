@@ -1,4 +1,4 @@
 date=2026-11-20
-seq=595
-ts=1795204100
-scope=can-frame
+seq=596
+ts=1795204105
+scope=pgn-decoder
