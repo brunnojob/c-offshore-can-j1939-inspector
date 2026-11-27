@@ -1,4 +1,4 @@
 date=2026-11-27
-seq=311
-ts=1795750111
-scope=can-frame
+seq=312
+ts=1795750112
+scope=bus-load
